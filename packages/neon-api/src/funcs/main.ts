@@ -91,11 +91,9 @@ export async function doInvoke(
     .then(fillBalance)
     .then(createInvocationTx)
     .then(addAttributeIfExecutingAsSmartContract)
-    .then(addAttributeForMintToken)
     .then(modifyTransactionForEmptyTransaction)
     .then(signTx)
     .then(addSignatureIfExecutingAsSmartContract)
-    .then(addSignatureForMintToken)
     .then(sendTx)
     .then(applyTxToBalance)
     .catch((err: Error) => {
